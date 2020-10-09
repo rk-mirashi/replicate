@@ -59,7 +59,10 @@ function Layout({ title, children }) {
               <li>
                 <img src="/images/andreas.jpg" />
                 <h4>Andreas Jansson</h4>
-                <p>ML infrastructure lead &amp; researcher at Spotify.</p>
+                <p>
+                  ML infrastructure &amp; research at Spotify. PhD in ML for
+                  music.
+                </p>
                 <p>
                   <a href="https://github.com/andreasjansson" className="link">
                     <FontAwesomeIcon icon={faGithub} />
