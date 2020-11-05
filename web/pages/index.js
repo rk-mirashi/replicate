@@ -22,15 +22,10 @@ export default function Home() {
     <Layout title="Replicate – Version control for machine learning">
       <Header className="homepage">
         <section className="cta">
-          <Link href="/docs">
-            <a className="button">Get Started</a>
-          </Link>{" "}
-          <hr/>
-          <div>
-            <p>Lightweight and open source.</p>
-            <a href="https://github.com/replicate/replicate">Contribute on GitHub</a> 
-            <GitHubButton href="https://github.com/replicate/replicate" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" aria-label="Star replicate/replicate on GitHub">Star</GitHubButton> {" "}
-          </div>
+          <h2>Lightweight<abbr title=" and"><span>,</span></abbr> open source</h2>
+          <p>
+            <Link href="/docs">Get Started</Link>{" "}<a href="https://github.com/replicate/replicate">Contribute on GitHub</a>{" "} <GitHubButton href="https://github.com/replicate/replicate" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" aria-label="Star replicate/replicate on GitHub">Star</GitHubButton>
+          </p>
         </section>
         <section className="info">
           <div>
