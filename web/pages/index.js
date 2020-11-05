@@ -2,6 +2,9 @@ import CodeBlock from "../components/code-block";
 import Header from "../components/header";
 import Layout from "../layouts/default";
 import Link from "next/link";
+import GitHubButton from "../components/react-github-btn.js";
+
+
 
 export default function Home() {
   let _num = 1;
@@ -22,7 +25,7 @@ export default function Home() {
           <Link href="/docs">
             <a className="button">Get Started</a>
           </Link>{" "}
-          Lightweight and open source.{" "}
+          <br/> Lightweight and open source. <a href="https://github.com/replicate/replicate">Contribute on GitHub</a> <GitHubButton href="https://github.com/replicate/replicate" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" aria-label="Star replicate/replicate on GitHub">Star</GitHubButton>{" "}
         </p>
         <section className="info">
           <div>

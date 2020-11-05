@@ -23,6 +23,7 @@
     "raw-loader": "^4.0.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
+    "react-github-btn": "^1.2.0",
     "remark-slug": "^6.0.0",
     "sass": "^1.26.10"
   }
