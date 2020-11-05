@@ -21,12 +21,17 @@ export default function Home() {
   return (
     <Layout title="Replicate – Version control for machine learning">
       <Header className="homepage">
-        <p>
+        <section className="cta">
           <Link href="/docs">
             <a className="button">Get Started</a>
           </Link>{" "}
-          <br/> Lightweight and open source. <a href="https://github.com/replicate/replicate">Contribute on GitHub</a> <GitHubButton href="https://github.com/replicate/replicate" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" aria-label="Star replicate/replicate on GitHub">Star</GitHubButton>{" "}
-        </p>
+          <hr/>
+          <div>
+            <p>Lightweight and open source.</p>
+            <a href="https://github.com/replicate/replicate">Contribute on GitHub</a> 
+            <GitHubButton href="https://github.com/replicate/replicate" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" aria-label="Star replicate/replicate on GitHub">Star</GitHubButton> {" "}
+          </div>
+        </section>
         <section className="info">
           <div>
             <h2>
