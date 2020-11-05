@@ -565,6 +565,7 @@ header {
       span {
         position: relative;
         top: 0.1em;
+        letter-spacing: 0;
       }
       @media (min-width: 701px) {
         margin-top: 0;
@@ -1004,7 +1005,7 @@ footer {
   @media (max-width: 700px) {
     padding-bottom: $whitespace-vertical;
   }
-  h2 {
+  & > h2 {
     @include font-feature;
     grid-column: 2 / 5;
     @include grid-module;
@@ -1049,82 +1050,130 @@ footer {
       }
     }
   }
-  #contributors {
+  #replicate {
+    @include layout-block;
     grid-column: 1 / 6;
     @include grid-layout;
-    $image-size: 7em;
-    h3 {
-      grid-column: 2 / 3;
+    h2 {
+      grid-column: 2 / 5;
       @include font-feature;
-      padding-bottom: $whitespace-vertical;
+      max-width: 25em;
+      padding: $whitespace-vertical*1.5 0 $whitespace-vertical*0.5;
+      span {
+        display: inline;
+      }
     }
-    > .us {
+    h3 {
+      @include font-feature;
+      padding-bottom: $whitespace-vertical*0.5;
+    }
+    h4 {
+      font-weight: 800;
+    }
+    #mission {
       grid-column: 2 / 4;
-      grid-row: 2 / 3;
-      display: flex;
-      flex-direction: row;
-      justify-content: stretch;
-      flex-wrap: wrap;
-      @media (max-width: 1000px) {
-        grid-column: 2 / 5;
+      padding-bottom: $whitespace-vertical;
+      p {
+        margin: $whitespace-vertical*0.5 0;
+        padding-right: $whitespace-horizontal*2;
+        max-width: 50em;
       }
-    }
-    > .more {
-      grid-column: 4 / 5;
-      grid-row: 2 / 3;
-      border-left: $keyline;
-      padding-left: $whitespace-horizontal;
-      @media (max-width: 1000px) {
-        grid-column: 2 / 5;
-        grid-row: 3 / 4;
-        border-left: none;
-        padding: $whitespace-vertical 0;
-      }
-      p:first-child {
-        padding-bottom: $whitespace-vertical / 4;
-      }
-    }
-    figure {
-      position: relative;
-      padding-left: calc(#{$image-size} + #{$whitespace-horizontal});
-      box-sizing: border-box;
-      width: 50%;
-      min-height: $image-size;
-      @media (max-width: 1000px) {
-        border-bottom: $keyline;
-      }
-      @media (max-width: 700px) {
-        width: 100%;
-        padding-left: calc(#{$image-size} + #{$whitespace-horizontal * 2});
-        & + figure {
-          margin-top: 1em;
+      ol {
+        columns: 2;
+        column-gap: 0;
+        counter-reset: mission-li;
+        li {
+          padding: 0 $whitespace-horizontal*2;
+          list-style: none;
+          break-inside: avoid;
+          counter-increment: mission-li;
+          strong:before {
+            content: counter(mission-li)". ";
+            position: relative;
+            display: inline-block;
+            width: $whitespace-horizontal*2;
+            text-indent: 0.5em;
+            margin-left: $whitespace-horizontal*-2;
+          }
+        }
+        @media (max-width: 700px) {
+          columns: 1;
+          li {
+            padding-left: $whitespace-horizontal*5;
+            strong:before {
+              width: $whitespace-horizontal*5;
+              margin-left: $whitespace-horizontal*-5;
+              text-indent: 0;
+            }
+          }
         }
       }
-      div {
-        position: absolute;
-        top: 0.3em;
-        left: 0;
-        width: $image-size;
-        height: $image-size - 0.3em;
-        background-repeat: no-repeat;
-        background-size: cover;
-        filter: grayscale(100%) brightness(120%);
-        mix-blend-mode: multiply;
-        z-index: 0;
+      @media (max-width: 1000px) {
+        grid-column: 2 / 5;
       }
-      h4 {
-        font-weight: bold;
+    }
+    #team {
+      position: relative;
+      grid-column: 4 / 5;
+      align-self: end;
+      padding-bottom: $whitespace-vertical*1.5;
+      figure {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-gap: $whitespace-horizontal;
+        margin: $whitespace-vertical*0.5 0;
+        div {
+          position: relative;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+          filter: grayscale(100%) brightness(120%);
+          mix-blend-mode: multiply;
+          top: 0.25em;
+          height: calc(100% - 0.5em);
+        }
+        .link {
+          margin-left: 0.5em;
+        }
       }
+      @media (max-width: 1000px) {
+        grid-column: 2 / 5;
+        border-top: $keyline;
+        padding-top: $whitespace-vertical;
+      }
+      @media (min-width:701px) and (max-width: 1000px) {
+        .us {
+          display: grid;
+          grid-template-columns: 50% 50%;
+          grid-gap: $whitespace-horizontal;
+          figure {
+            min-height: 5em;
+            padding-right: 3em;
+          }
+        }
+      }
+      @media (min-width: 1001px) {
+        max-width: 23em;
+        &:before {
+          content: " ";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: $whitespace-horizontal*-1;
+          width: 0;
+          border-left: $keyline;
+        }
+      }
+    }
+    #get-involved {
+      grid-column: 2 / 5;
+      border-top: $keyline;
+      padding: $whitespace-vertical 0 $whitespace-vertical*2;
       p {
-        max-width: 15em;
+        margin: $whitespace-vertical*0.5 0;
+        max-width: 50em;
       }
     }
-    .link {
-      margin-right: $whitespace-horizontal;
-    }
-  }
-  #get-involved {
-    grid-column: 3 / 5;
   }
   #beta-message {
     grid-column: 2 / 3;
@@ -1159,10 +1208,6 @@ footer {
     grid-column: 2 / 5;
     grid-row: 3 / 4;
     padding-top: $whitespace-vertical;
-    border-top: $keyline;
-    @media (max-width: 1000px) {
-      border-top: none;
-    }
     @media (max-width: 700px) {
       grid-row: 4 / 5;
       border-top: $keyline;

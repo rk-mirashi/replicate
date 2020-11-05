@@ -24,7 +24,7 @@ export default function Home() {
         <section className="cta">
           <h2>Lightweight<abbr title=" and"><span>,</span></abbr> open source</h2>
           <p>
-            <Link href="/docs">Get Started</Link>{" "}<a href="https://github.com/replicate/replicate">Contribute on GitHub</a>{" "} <GitHubButton href="https://github.com/replicate/replicate" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" aria-label="Star replicate/replicate on GitHub">Star</GitHubButton>
+            <Link href="/docs">Get Started</Link>{" "}<a href="#replicate">Get involved</a>{" "} <GitHubButton href="https://github.com/replicate/replicate" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" aria-label="Star replicate/replicate on GitHub">Star</GitHubButton>
           </p>
         </section>
         <section className="info">
