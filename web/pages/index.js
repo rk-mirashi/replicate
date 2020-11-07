@@ -2,9 +2,6 @@ import CodeBlock from "../components/code-block";
 import Header from "../components/header";
 import Layout from "../layouts/default";
 import Link from "next/link";
-import GitHubButton from "../components/react-github-btn.js";
-
-
 
 export default function Home() {
   let _num = 1;
@@ -22,9 +19,24 @@ export default function Home() {
     <Layout title="Replicate – Version control for machine learning">
       <Header className="homepage">
         <section className="cta">
-          <h2>Lightweight<abbr title=" and"><span>,</span></abbr> open source</h2>
+          <h2>
+            Lightweight
+            <abbr title=" and">
+              <span>,</span>
+            </abbr>{" "}
+            open source
+          </h2>
           <p>
-            <Link href="/docs">Get Started</Link>{" "}<a href="#replicate">Get involved</a>{" "} <GitHubButton href="https://github.com/replicate/replicate" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" aria-label="Star replicate/replicate on GitHub">Star</GitHubButton>
+            <Link href="/docs">Get Started</Link>{" "}
+            <a href="#replicate">Get involved</a>{" "}
+            <iframe
+              src="https://ghbtns.com/github-btn.html?user=replicate&amp;repo=replicate&amp;type=star&amp;count=false&amp;size=large"
+              frameBorder="0"
+              scrolling="0"
+              width="170"
+              height="30"
+              title="GitHub"
+            ></iframe>
           </p>
         </section>
         <section className="info">
